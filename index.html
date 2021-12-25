@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netease Cloud Music</title>
+    <link href="/common.css" rel="stylesheet">
+    <script src="/main.js"></script>
+    <script src="/module/banner.js"></script>
+    <script src="/module/recommend.js"></script>
+    <script src="/module/music_list.js"></script>
+    <script src="/module/get_song.js"></script>
+    <script src="/module/pop_song.js"></script>
+    <script src="/module/rank_list.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/waifu.css"/>
+    <script src="./module/Sakura.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+           <h2>
+            <img src="../img/logo.png">
+           </h2>
+            <ul class="ul2">
+                <li class="log"><a href="#" >登录</a></li>
+                <li><a href="#">客户端</a></li>
+            </ul>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="#">个性推荐</a></li>
+                <li><a href="#">歌单</a></li>
+                <li><a href="#">专属定制</a></li>
+                <li><a href="#">我的音乐</a></li>
+                <li><a href="#">朋友</a></li>
+                <li><a href="#">商城</a></li>
+                <li><a href="#">音乐人</a></li>
+            </ul>
+            <div class="search">
+                <img src="">
+                <input type="text" value="" id="search"></div>
+            </div>
+        <div class="banner">
+            <div class="box">
+                <ul id="item">
+                   
+                </ul>
+                <div id="box-left"><a href="#"><</a></div>
+                <div id="box-right"><a href="#">></a></div>
+
+            </div>
+            <ul id="item1">
+               
+            </ul>
+        </div>
+        <div class="cont">
+            <h3 id="pop_list">热门推荐：</h3>
+            <h3 id="all_list">全部歌单</h3>
+            <div class="gedan">
+                <ul id="gedan1">
+                   
+                </ul>
+            </div>
+            <div id="change_page">
+                <button id="pre_page">↑</button>
+                <button id="next_page">↓</button>
+                <button id="return0">返回</button>
+                
+            </div>
+            <div id="mv">
+
+            </div>
+            <button id="mvid">MV</button>
+            <button id="geciid">歌词</button>
+            
+            <a class="genduo" href="###">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多>></a>
+        <div id="song">
+            <img id="song0" src="">
+           <img id="song1" src="../img/封面.png">
+            <img id="song2" src="">
+            <img id="bofang1" src="../img/pause.png">
+            <img id="zanting1" src="../img/on.png">
+            <img id="shang1" src="../img/pre.png">
+            <img id="xia1" src="../img/next.png">
+            <div class="player">
+                <div class="slider">
+                    <div class="buffer"></div>
+                    <div class="processor"></div>
+                    <div class="controller"></div>
+                </div>
+            </div> 
+            <audio id="musicbo" controls="controls" src=""></audio>
+            <div id="songname3"></div>
+            <div id="geci"></div>
+        </div>         
+        </div>
+        <div id="rank">
+            <h1>排行榜:</h1>
+            <dl>
+                <dt>飙升榜<img id="biao2" src="../img/播放.png"></dt>
+                <dd>
+                    <ol id="biao1">
+                       
+                    </ol>
+                </dd>
+            </dl>
+            <dl>
+                <dt>新歌榜<img id="xin2" src="../img/播放.png"></dt>
+                <dd>
+                    <ol id="xin1">
+                        
+                    </ol>
+                </dd>
+            </dl>
+            <dl>
+                <dt>原创榜<img id="yuan2" src="../img/播放.png"></dt>
+                <dd>
+                    <ol id="yuan1">
+                        
+                    </ol>
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+    <div id="my">
+        <dl id="mydl1">
+            <dt class="mydt">我的歌单
+                <button id="mybutton1">返回</button>
+            </dt>
+            <dd class="mydd">
+                <ul id="myol">
+                </ul>
+            </dd>
+        </dl>
+         
+    </div>   
+    <div id="gequ1">
+       <span class="sousuojieguo"> 搜索结果</span> 
+        <ol id="songs"></ol>
+    </div>
+    <input id="kai1" type="button" value="↓" >
+    <input id="kai2" type="button" value=">" >
+    <div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div id="user">
+        <div id=user_head>用&nbsp;&nbsp;&nbsp;户</div>
+        <div id=user_name>七海Nana7mi</div>
+        <div id="user_pic"></div>
+        <div id="user_line"></div>
+        <div id="user_main">
+            <ul>
+                <li><a href="#">动态</a></li>
+                <li><a href="#">关注</a></li>
+                <li><a href="#">粉丝</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="assets/waifu-tips.js"></script>
+    <script src="assets/live2d.js"></script>
+    <script type="text/javascript">initModel("assets/")</script>
+</body>
+</html>
